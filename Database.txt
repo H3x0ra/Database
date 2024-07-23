@@ -1,0 +1,50 @@
+
+create table Doctor (
+D_id int constraint Docotr_Id_Pk primary key,
+D_Name varchar(60),
+gender char(1) ,
+salary float ,
+Age int
+
+);
+
+create table nurses (
+N_id int constraint Nurse_ID_pk primary key ,
+N_name varchar(60),
+gender char(2),
+salary float, 
+Age int 
+
+);
+
+create table patient(
+p_id int constraint Patient_Id_PK primary key ,
+p_name varchar(60) , 
+gender char(2),
+Age int ,
+D_id int  foreign key references Doctor (D_id),
+N_id int  foreign key references nurses (n_id),
+);
+
+insert into  doctor (D_id ,D_Name,gender,salary ,Age) values (1,'kasem','m',1500,23);
+insert into  doctor (D_id ,D_Name,gender,salary ,Age) values (2,'Tawalbeh','m',1000,40);
+insert into  doctor (D_id ,D_Name,gender,salary ,Age) values (3,'ramy','m',900,27);
+insert into  doctor (D_id ,D_Name,gender,salary ,Age) values (4,'sara','f',1000,30);
+
+
+insert into  nurses(N_id ,N_name,gender,salary ,age) values (1,'mohamed','m',1200,33);
+insert into  nurses(N_id ,N_name,gender,salary ,age) values (2,'ramy','m',1600,53);
+insert into  nurses(N_id ,N_name,gender,salary ,age) values (3,'saleh','m',700,43);
+insert into  nurses(N_id ,N_name,gender,salary ,age) values (4,'nermen','f',1500,32);
+insert into  nurses(N_id ,N_name,gender,salary ,age) values (5,'abed','m',500,23);
+insert into  nurses(N_id ,N_name,gender,salary ,age) values (6,'yousef','m',1800,55);
+insert into  nurses(N_id ,N_name,gender,salary ,age) values (7,'farah','f',600,25);
+
+
+insert into  patient(p_id ,p_name , gender,Age ,D_id,N_id ) values (1,'amjad','m',16,1,1);
+insert into  patient(p_id ,p_name , gender,Age ,D_id,N_id ) values (2,'haitham','m',60,2,2);
+insert into  patient(p_id ,p_name , gender,Age ,D_id,N_id ) values (3,'majd','m',60,3,3);
+insert into  patient(p_id ,p_name , gender,Age ,D_id,N_id ) values (4,'momen','m',10,4,4);
+
+
+
